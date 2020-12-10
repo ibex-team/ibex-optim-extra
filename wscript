@@ -66,7 +66,7 @@ def configure (conf):
 ####### build ########
 ######################
 def build (bld):
-	if bld.options.WITH_OPTIM_EXTRA:
+	if bld.env.WITH_OPTIM_EXTRA:
 		# build optimizer04
 		bld.program (
 			target = "optimizer04",

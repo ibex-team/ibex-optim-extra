@@ -12,11 +12,31 @@
 #include "ibex_LinearizerAffine2.h"
 #include "ibex_LinearizerCompo.h"
 #include "ibex_LinearizerXTaylor.h"
+#include "ibex_LinearizerAffine2.h"
+
+#ifdef _IBEX_WITH_AMPL_
+#include "ibex_AmplInterface.h"
+#endif
 
 namespace ibex {
 
 Optimizer04Config_Affine::Optimizer04Config_Affine(int argc, char** argv) : Optimizer04Config(argc, argv) {
 
+}
+
+void Optimizer04Config_Affine::load_sys(const char* filename) {
+#ifdef _IBEX_WITH_AMPL_
+	std::size_t found = string(filename).find(".nl");
+
+	if (found!=std::string::npos) {
+		AmplInterface interface (filename);
+		sys = &rec(new System(interface));
+	} else
+		sys = &rec(new System(filename));
+#else
+	std::cerr << "\n\033[31mAMPL files needs ibex-ampl plugin.\n\n";
+	exit(0);
+#endif
 }
 
 Linearizer* Optimizer04Config_Affine::get_linear_relax() {

@@ -21,8 +21,9 @@ public:
 	Optimizer04Config_Affine(int argc, char** argv);
 
 protected:
+	virtual void load_sys(const char* filename) override;
 
-	virtual Linearizer* get_linear_relax();
+	virtual Linearizer* get_linear_relax() override;
 };
 
 } // namespace ibex

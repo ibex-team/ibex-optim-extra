@@ -16,9 +16,6 @@
 namespace ibex {
 
 class Optimizer04Config_Affine : public Optimizer04Config {
-public:
-
-	Optimizer04Config_Affine(int argc, char** argv);
 
 protected:
 	virtual void load_sys(const char* filename) override;

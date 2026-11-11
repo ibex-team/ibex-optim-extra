@@ -15,7 +15,9 @@ using namespace ibex;
 
 int main(int argc, char** argv) {
 
-	Optimizer04Config_Affine config(argc,argv);
+	Optimizer04Config_Affine config;
+	
+	config.init(argc,argv);
 
 	Optimizer o(config);
 

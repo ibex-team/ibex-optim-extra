@@ -22,7 +22,7 @@ namespace ibex {
 class Optimizer04Config : public OptimizerConfig, protected Memory {
 public:
 
-	Optimizer04Config(int argc, char** argv);
+	void init(int argc, char** argv);
 
 	/** Fix-point ratio for contraction based on linear relaxation. */
 	static constexpr double relax_ratio = 0.2;

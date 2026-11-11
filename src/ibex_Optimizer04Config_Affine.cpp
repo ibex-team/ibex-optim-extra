@@ -20,10 +20,6 @@
 
 namespace ibex {
 
-Optimizer04Config_Affine::Optimizer04Config_Affine(int argc, char** argv) : Optimizer04Config(argc, argv) {
-
-}
-
 void Optimizer04Config_Affine::load_sys(const char* filename) {
 #ifdef _IBEX_WITH_AMPL_
 	std::size_t found = string(filename).find(".nl");

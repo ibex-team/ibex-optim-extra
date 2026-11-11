@@ -38,7 +38,7 @@ using namespace std;
 
 namespace ibex {
 
-Optimizer04Config::Optimizer04Config(int argc, char** argv) {
+void Optimizer04Config::init(int argc, char** argv) {
 
 	try {
 		if (argc<8) {

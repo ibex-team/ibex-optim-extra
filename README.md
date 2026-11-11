@@ -1,6 +1,6 @@
-This repository contains the plugin Optim extra for the Ibex library.
+This package contains extra functionalities for the IBEX optimizer.
 
-# Compilation of the plugin
+# Compilation of the package
 
 ```
 mkdir build
@@ -10,14 +10,17 @@ make
 make check
 ```
 
-This plugin requires the plugin Affine. If it was install in a directory unknown
-to CMake, you must set the environment variable `IBEX_AFFINE_DIR` to indicate
-this directory, before calling
-CMake. For example,
+This package requires the ibex-affine package. If it was install in a directory unknown to CMake, you must either indicate the installation path with `CMAKE_PREFIX_PATH` or the exact location of the CMake configuration packages using `IBEX_AFFINE_DIR`:
+Examples:
 
 ```
-IBEX_AFFINE_DIR=/my/special/path cmake ..
+cmake -DCMAKE_PREFIX_PATH=/path-to-ibex-affine ...
 ```
+```
+cmake -DIBEX_AFFINE_DIR=/path-to-ibex-affine/share/ibex_affine/cmake ...
+```
+
+
 
 # Installation
 
@@ -28,5 +31,5 @@ sudo make install
 To install to a specific directory, you need to specify it when calling CMake.
 For example,
 ```
-  IBEX_AFFINE_DIR=/my/special/path cmake -DCMAKE_INSTALL_PREFIX=/another/path ..
+  cmake -DCMAKE_INSTALL_PREFIX=/another/path ..
 ```

@@ -15,7 +15,7 @@ make
 make check
 ```
 
-This package requires the `ibex-affine` package (mandatory) and the `ibex-ampl` package (optional). If these pacakges are installed in a directory unknown to CMake, you must either indicate the installation path with `CMAKE_PREFIX_PATH` or the exact location of the CMake configuration packages using `IBEX_AFFINE_DIR` (or `IBEX_AMPL_DIR`):
+This package requires the `ibex-affine` package (mandatory) and the `ibex-ampl` package (optional). If these pacakges are installed in a directory unknown to CMake, you must either indicate the installation path with `CMAKE_PREFIX_PATH` or the exact location of the CMake configuration files using `IBEX_AFFINE_DIR` (or `IBEX_AMPL_DIR`):
 Examples:
 
 ```

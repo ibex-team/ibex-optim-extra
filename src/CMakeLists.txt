@@ -1,6 +1,6 @@
 add_executable (optimizer04 bin/optimizer04.cpp
-                            ibex_Optimizer04Config_Affine.cpp
-                            ibex_Optimizer04Config_Affine.h)
+                            ibex_Optimizer04Config.cpp
+                            ibex_Optimizer04Config_Affine.cpp)
 target_include_directories (optimizer04 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries (optimizer04 PUBLIC Ibex::ibex-affine)
 
